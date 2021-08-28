@@ -13,10 +13,14 @@ app.use(morgan("dev"));
 
 loaders();
 
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.json({ msg: "hello" });
 });
 
+app.use("/history", require("./api/history/history.routes"));
+
 app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
+  console.log(`App listening on ${port}`);
 });
