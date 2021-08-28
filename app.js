@@ -3,7 +3,7 @@ const morgan = require("morgan");
 
 require("dotenv").config();
 
-const PORT = process.env.PORT;
+const { port } = require("./config");
 
 const app = express();
 
@@ -13,6 +13,6 @@ app.get("/", (req, res) => {
   res.json({ msg: "hello" });
 });
 
-app.listen(PORT, () => {
-  console.log(`App listening at http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`App listening at http://localhost:${port}`);
 });
