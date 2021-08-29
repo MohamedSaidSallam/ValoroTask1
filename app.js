@@ -11,12 +11,12 @@ const app = express();
 
 app.use(morgan("dev"));
 
-loaders();
+loaders(app);
 
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.json({ msg: "hello" });
+  res.render("index", { from: req.query.text || "", to: "" });
 });
 
 app.use("/history", require("./api/history/history.routes"));

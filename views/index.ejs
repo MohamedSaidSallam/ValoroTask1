@@ -1,0 +1,88 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/header.ejs") %>
+
+
+
+  <div class="wrapper">
+
+
+    <div class="background-strip"></div>
+
+    <div class="content">
+
+      <div class="tabs-buttons">
+
+        <button class="tab-button" type="button" onclick="notGoogleTranslateAlert()">
+          <span class="material-icons">
+            translate
+          </span>
+          Text
+        </button>
+
+        <button class="tab-button" type="button" onclick="notGoogleTranslateAlert()">
+          <span class="material-icons">
+            description
+          </span>
+          Documents
+        </button>
+      </div>
+
+
+
+      <div class="translation-area">
+        <div class="translate-section">
+          English
+          <textarea id="translateFromTextArea" class="text-area" name="textFrom" rows="5"
+            autofocus><%= from %></textarea>
+        </div>
+        <div class="translate-section">
+          Arabic
+          <textarea id="translateToTextArea" class="text-area" name="textTo" rows="5" readonly><%= to %></textarea>
+        </div>
+      </div>
+
+      <button class="translate-button" type="button" onclick="translateText()">
+        TRANSLATE
+      </button>
+
+      <div class="bottom-buttons">
+        <button class="favorite styled" type="button" onclick="notGoogleTranslateAlert()">
+          <span class="material-icons">
+            description
+          </span>
+          History
+        </button>
+        <button class="favorite styled" type="button" onclick="notGoogleTranslateAlert()">
+          <span class="material-icons">
+            star_rate
+          </span>
+          Saved
+        </button>
+        <button class="favorite styled" type="button" onclick="notGoogleTranslateAlert()">
+          <span class="material-icons">
+            supervisor_account
+          </span>
+          Contribute
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const translateToTextArea = document.querySelector('#translateToTextArea');
+    const translateFromTextArea = document.querySelector('#translateFromTextArea');
+
+    const translateText = (e) => {
+      window.location.href = `?text=${translateFromTextArea.value}`;
+    }
+    const notGoogleTranslateAlert = (e) => {
+      alert('Not Google Translate :(');
+    }
+  </script>
+</body>
+
+</html>

@@ -1,5 +1,7 @@
 const db = require("./db");
+const ejs = require("./ejs");
 
-module.exports = () => {
+module.exports = (app) => {
   db();
+  ejs(app);
 };
