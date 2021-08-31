@@ -82,7 +82,8 @@ html {
 
   padding: 1em 0;
 }
-.tab-button, .translate-button {
+.tab-button,
+.translate-button {
   color: #1967d2;
   font-family: "Google Sans", Roboto, Arial, sans-serif;
 
@@ -121,16 +122,28 @@ html {
   padding: 1em 1em;
 
   font-size: 24px;
+
+  resize: none;
 }
 
-.translate-button{
+.translate-button {
   margin: 3em auto;
+  color: white;
+  background: #1967d2;
+  font-size: 1.2rem;
 }
 
 .bottom-buttons {
-  margin: 10em auto;
+  margin: 10em auto 4em;
   display: flex;
 
   justify-content: center;
   gap: 1em;
+}
+
+.history-table{
+  width: 100%;
+}
+.date-cell{
+  text-align: right;
 }
