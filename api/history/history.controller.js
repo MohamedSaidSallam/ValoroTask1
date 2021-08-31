@@ -12,7 +12,6 @@ const getFullHistory = async (req, res, next) => {
 
 const appendToHistory = async (req, res, next) => {
   const historyData = req.body;
-  console.log(historyData);
 
   try {
     const newEntry = await new History(historyData);
